@@ -10,7 +10,7 @@
 ## Usage
 #### Available through npm as `vue-touch-slider`.
   
-      import vueSlider from 'vue-touch-slider'  
+      import vueTouchSlider from 'vue-touch-slider'  
       Vue.use(VueTouchSlider)
 
 
