@@ -21,8 +21,6 @@
     	<img>...	
     </a>
 
-```
-
 ## License
 
 MIT
