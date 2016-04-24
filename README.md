@@ -1,7 +1,7 @@
 # vue-touch-slider
 
 - touch slider plugin for Vue.js
-- vue-touch-slider是一个Vue.js图片滑动浏览器插件，可以放大图片并且左右滑动浏览
+- vue-touch-slider是一个移动端的图片滑动浏览器Vue.js插件，可以放大图片并且左右滑动浏览
 
 ## Install
 
