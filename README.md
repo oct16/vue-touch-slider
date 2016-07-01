@@ -16,13 +16,47 @@
       import vueTouchSlider from 'vue-touch-slider'  
       Vue.use(VueTouchSlider)
 
+#### Setting your data model
+  
+    <script>
+    	export default {
+        	data(){
+            	return {
+                	content : '<p><img src="..."></p>'
+            	}
+        	}
+    	}    
+    </script>
+    
+or
 
-#### Using the `v-touch-slider` directive
+    <script>
+    	export default {
+        	data(){
+            	return {
+                	content : ''
+            	}
+        	},
+        	ready(){
+        		this.$http.get('/api/...').then((res)=>{
+        			return res.data
+        		}).then((data)=>{
+        			this.content = data.content
+        		})
+        	
+        	}
+    	}    
+    </script>
+        
+    
 
-    <div v-touch-slider>
-    	content...
-    	<img>...	
-    </a>
+#### Using the `v-touch-slider` directive bindding data
+    
+    <template>
+        <div>
+        	<div v-touch-slider="content" v-html="content"></div>
+        </div>
+    </template>	
 
 ## License
 
