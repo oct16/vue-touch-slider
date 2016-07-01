@@ -4,12 +4,6 @@
 
     vueTouchSlider.install = function (Vue) {
 
-        var getSingle = function (fn) {
-            var result;
-            return function () {
-                return result || (result = fn.apply(this, arguments))
-            }
-        }
         var isInited = false
 
         Vue.directive('touch-slider', {
@@ -18,15 +12,22 @@
                 var slider = document.querySelector('#vue-touch-slider');
                 if(slider){
                     slider.parentNode.removeChild(slider)
+                    isInited = false
                 }
             },
             update : function(v){
 
                 if(v && !isInited){
 
-                    isInited = 1
-
+                    isInited = false
                     var self = this;
+                    var getSingle = function (fn) {
+                        var result;
+                        return function () {
+                            return result || (result = fn.apply(this, arguments))
+                        }
+                    }
+
                     setTimeout(function(){
 
                         var createSingleSliderLayer = getSingle(createSliderLayer),
